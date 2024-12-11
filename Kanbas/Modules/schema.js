@@ -27,6 +27,8 @@ const schema = new mongoose.Schema(
         description: String,
         course: { type: mongoose.Schema.Types.ObjectId, ref: "CourseModel" },
     },
-    { collection: "modules" }
+    { collection: "modules",
+        versionKey: false
+     }
 );
 export default schema;
