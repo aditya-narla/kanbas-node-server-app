@@ -28,7 +28,7 @@ export function createModule(module) {
 
 export function deleteModule(moduleId) {
     return model.deleteOne({ _id: moduleId });
-}   
+}
 
 // export function updateModule(moduleId, moduleUpdates) {
 //     const { modules } = Database;
