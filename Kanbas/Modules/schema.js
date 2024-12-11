@@ -1,32 +1,32 @@
 // import mongoose from "mongoose";
-// const schema = new mongoose.Schema(
+
+// const lessonSchema = new mongoose.Schema({
+//     _id: String,
+//     name: String,
+//     description: String,
+//     module: String,
+// });
+
+// const moduleSchema = new mongoose.Schema(
 //     {
 //         name: String,
-//         description: String,
+//         description: { type: String, default: "No description available" },
 //         course: { type: mongoose.Schema.Types.ObjectId, ref: "CourseModel" },
+//         lessons: [lessonSchema]
 //     },
-//     { collection: "modules" }
+//     { collection: "modules",
+//         versionKey: false }
 // );
-// export default schema;
+
+// export default moduleSchema;
 
 import mongoose from "mongoose";
-
-const lessonSchema = new mongoose.Schema({
-    _id: String,
-    name: String,
-    description: String,
-    module: String,
-});
-
-const moduleSchema = new mongoose.Schema(
+const schema = new mongoose.Schema(
     {
         name: String,
-        description: { type: String, default: "No description available" },
+        description: String,
         course: { type: mongoose.Schema.Types.ObjectId, ref: "CourseModel" },
-        lessons: [lessonSchema]
     },
-    { collection: "modules",
-        versionKey: false }
+    { collection: "modules" }
 );
-
-export default moduleSchema;
+export default schema;
